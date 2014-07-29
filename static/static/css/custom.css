@@ -1,0 +1,147 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:300');
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+
+#body-content   {
+    padding-top: 25px;
+}
+
+footer  {
+    padding-bottom: 25px;
+}
+
+.text-success {
+color: #18BB1A;
+}
+
+/*testing video background*/
+
+/*.video1 video{*/
+    /*box-sizing: border-box;*/
+    /*color: rgb(61, 67, 81);*/
+    /*display: inline-block;*/
+    /*height: 540px;*/
+    /*opacity: 0.6000000238418579;*/
+    /*position: relative;*/
+    /*text-align: center;*/
+    /*text-decoration: none solid rgb(61, 67, 81);*/
+    /*width: 100%;*/
+    /*z-index: 0;*/
+    /*background: rgb(61, 67, 81) ;*/
+    /*border: 0px none rgb(61, 67, 81);*/
+    /*font: normal normal normal 16px/24.533279418945313px chaparral-pro, serif;*/
+    /*outline: rgb(61, 67, 81) none 0px;*/
+/*}*/
+
+/*.video source {*/
+    /*box-sizing: border-box;*/
+    /*color: rgb(61, 67, 81);*/
+    /*text-align: center;*/
+    /*text-decoration: none solid rgb(61, 67, 81);*/
+    /*border: 0px none rgb(61, 67, 81);*/
+    /*font: normal normal normal 16px/24.533279418945313px chaparral-pro, serif;*/
+    /*outline: rgb(61, 67, 81) none 0px;*/
+/*}*//*#SOURCE_2, #SOURCE_3*/
+
+
+.container-fluid {
+     padding-left: 15px;
+     padding-right: 15px;
+}
+.navbar-inverse {
+
+    margin-bottom: 18px;
+    border-color: #222;
+
+}
+
+button a {
+    color:black;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #ffffff;
+}
+
+.content {
+
+  font: 300 40px Lato, sans-serif;
+  text-align: center;
+  color: #ffffff;
+  background: #ffffff;
+}
+
+.footer {
+
+  text-align: center;
+}
+
+.social {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  line-height: 30px;
+  font-family: Entypo;
+  font-size: 15px;
+  text-align: center;
+  color: #bbb;
+  border-radius: 50%;
+  background: #eee;
+  overflow: hidden;
+  transition: color .3s;
+}
+
+.social:hover {
+    color: #59d;
+    cursor: pointer;
+}
+
+#DIV_111 {
+    color: #18bb1a;
+    height: 100px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    width: 100px;
+    perspective-origin: 50px 50px;
+    transform-origin: 50px 50px;
+    background: #222222 none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    border-radius: 50px 50px 50px 50px;
+    font: normal normal normal 20px/100px arial, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_1*/
+
+#DIV_112 {
+    color: #18bb1a;
+    height: 100px;
+    text-align: center;
+    text-decoration: none solid rgb(255, 255, 255);
+    width: 100px;
+    perspective-origin: 50px 50px;
+    transform-origin: 50px 50px;
+    background: #222222 none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    border-radius: 50px 50px 50px 50px;
+    font: normal normal normal 20px/100px arial, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_1*/
+
+
+#sidebar-wrapper {
+
+    margin-right: 12px;
+}
+
+
+
+

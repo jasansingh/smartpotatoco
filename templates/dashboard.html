@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{%block sidebar_menu_toggle %}
+
+{% endblock %}
+{% block content %}
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav hidden-xs">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        {{ single_user }}
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard/{{ single_user }}">Main Dashboard</a>
+                </li>
+                <li>
+                    <a href="/dashboard/detailed_data/{{ single_user }}">Detailed Data</a>
+                </li>
+                <li>
+                    <a href="/dashboard/trend/{{ single_user }}">Nutritional Trends</a>
+                </li>
+                <li>
+                    <a href="/upload_image/{{ single_user }}">Upload Receipt</a>
+                </li>
+                <li>
+                    <a href="/dashboard/recm/{{ single_user }}">Recommendations</a>
+                </li>
+                <li>
+                    <a href="#">Shopping list</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="#menu-toggle" class="btn btn-default pull-center" id="menu-toggle">Toggle Dashboard Menu</a>
+                        <h1>Live Better</h1>
+                        <div class="col-lg-4 col-md-offset-4pull-right">
+
+                            <div class="shake shake-slow" id="DIV_111">
+                                <strong id="temp1">92</strong>
+                                <strong id="temp2" style="display: none">100</strong>
+                                <strong id="temp3" style="display: none">96</strong>
+                                <strong id="temp4" style="display: none">94</strong>
+
+                            </div>
+                             <div class="hidden" id="DIV_112">
+                                <strong id="temp2">100</strong>
+
+                            </div>
+                        </div>
+
+        </div>
+                        <p>.</p>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    {% block list_addons %}
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="btn-group text-center">
+                    <button type="button" class="btn btn-default"><a href="#">Carbs</a></button>
+                    <button type="button" class="btn btn-default"><a href="#">Fat</a></button>
+                    <button type="button" class="btn btn-default"><a href="#"> Protein</a></button>
+                    <button type="button" class="btn btn-default"><a href="/dashboard/sugar/{{ single_user }}">Sugar</a></button>
+                    <button type="button" class="btn btn-default"><a href="#">Fiber</a></button>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}
+
+            {% block data %}
+
+                <script type="text/javascript">
+
+                    window.onload = function () {
+
+                        var chart = new CanvasJS.Chart("chartContainer",
+                                {
+                                    theme: "theme3",
+                                    title:{
+                                        text: "Today's Nutritional Data",
+                                        fontSize: 30
+                                    },
+                                    toolTip: {
+                                        shared: true
+                                    },
+                                    axisX:{
+                                        title: "Today's "
+                                    },
+
+                                    axisY: {
+                                        title: "grams"
+                                    },
+                                    axisY2: {
+                                        title: ""
+                                    },
+
+                                    legend:{
+                                        verticalAlign: "top",
+                                        horizontalAlign: "center"
+                                    },
+                                    data: [
+                                        {
+                                            type: "column",
+                                            name: "Recommended Intake",
+                                            legendText: "Recommended Intake",
+                                            showInLegend: true,
+                                            dataPoints:[
+                                                {label: "Carbs", y: 300},
+                                                {label: "Fat", y: 65},
+                                                {label: "Protein", y: 50},
+                                                {label: "Sugar", y: 36},
+                                                {label: "Fiber", y: 25}
+
+
+
+                                            ]
+                                        },
+                                        {
+                                            type: "column",
+                                            name: "Your actual Intake",
+                                            legendText: "Your actual Intake",
+                                            axisYType: "secondary",
+                                            showInLegend: true,
+                                            dataPoints:[
+                                                {label: "Carbs", y: 135},
+                                                {label: "Fat", y: 114},
+                                                {label: "Protein", y: 49},
+                                                {label: "Sugar", y: 78},
+                                                {label: "Fiber", y: 31}
+
+
+                                            ]
+                                        }
+
+                                    ],
+                                    legend:{
+                                        cursor:"pointer",
+                                        itemclick: function(e){
+                                            if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                e.dataSeries.visible = false;
+                                            }
+                                            else {
+                                                e.dataSeries.visible = true;
+                                            }
+                                            chart.render();
+                                        }
+                                    }
+
+
+                                });
+
+
+
+                        chart.render();
+
+                    }
+                </script>
+            {% endblock %}
+            <script src="/static/static/js/jquery-1.11.0.js"></script>
+            <script type="text/javascript" src="/static/static/js/canvasjs.min.js"></script>
+            <script src="/static/static/js/sticker.min.js"></script>
+            <script src="/static/static/js/custom.js"></script>
+
+
+    </div>
+            <div class="row"></div>
+            <div class="col-md-3 col-md-offset-4 text-center "id="chartContainer" style="height: 300px; width: 90%; margin: 10px;"> </div>
+        </div>
+
+
+
+
+        <!-- /#page-content-wrapper -->
+
+
+
+    <!-- /#wrapper -->
+{% endblock %}
+
+
+
+
+
+
+
+

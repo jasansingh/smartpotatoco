@@ -1,0 +1,76 @@
+{% extends 'dashboard.html' %}
+
+{% block data %}
+
+<script type="text/javascript">
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer",
+		{
+			theme: "theme3",
+			title:{
+				text: "Today's Nutrition data for Sugar",
+				fontSize: 30
+			},
+			toolTip: {
+				shared: true
+			},
+			axisX:{
+				title: ""
+			},
+
+			axisY: {
+				title: "grams"
+			},
+			axisY2: {
+				title: ""
+			},
+
+			legend:{
+				verticalAlign: "top",
+				horizontalAlign: "center"
+			},
+			data: [
+			{
+				type: "column",
+				name: "Recommended Intake",
+				legendText: "Recommended Intake",
+				showInLegend: true,
+				dataPoints:[
+				{label: "Sugar", y: 36}
+
+
+				]
+			},
+			{
+				type: "column",
+				name: "Actual Intake",
+				legendText: "Actual Intake",
+				axisYType: "secondary",
+				showInLegend: true,
+				dataPoints:[
+				{label: "Sugar", y: 78}
+
+
+				]
+			}
+
+			],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+              	e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+            	chart.render();
+            }
+          }
+        });
+
+chart.render();
+}
+</script>
+
+{% endblock %}

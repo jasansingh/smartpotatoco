@@ -1,0 +1,105 @@
+{% extends 'dashboard.html' %}
+
+{% block list_addons %}
+<div class="row addons">
+    <div class="col-lg-4 col-md-offset-4 col-md-4 col-md-offset-4 text-center">
+   <ul class="list-group">
+  <li class="list-group-item btn btn-default" id="first_addon"> <button onclick="hacky()" class="btn btn-default">Add NICE! NATURAL ALMONDS to <strong>+ 8 points </strong></button></li>
+  <li class="list-group-item btn btn-default" id="second_addon"><button onclick="hacky2()"  class="btn btn-default">Add NICE! FRUIT SNACK to <strong>+ 4 points </strong></button></li>
+  <li class="list-group-item btn btn-default" id="third_addon"><button onclick="hacky3()"  class="btn btn-default">Add NESTLE RAISINETS to <strong>+ 2 points </strong></button></li>
+</ul>
+    </div>
+</div>
+{% endblock %}
+{% block data %}
+
+
+
+           <script type="text/javascript">
+
+                    window.onload = function () {
+
+                        var chart = new CanvasJS.Chart("chartContainer",
+                                {
+                                    theme: "theme3",
+                                    title:{
+                                        text: "Today's Nutritional Data",
+                                        fontSize: 30
+                                    },
+                                    toolTip: {
+                                        shared: true
+                                    },
+                                    axisX:{
+                                        title: "Today's "
+                                    },
+
+                                    axisY: {
+                                        title: "grams"
+                                    },
+                                    axisY2: {
+                                        title: ""
+                                    },
+
+                                    legend:{
+                                        verticalAlign: "top",
+                                        horizontalAlign: "center"
+                                    },
+                                    data: [
+                                        {
+                                            type: "column",
+                                            name: "Recommended Intake",
+                                            legendText: "Recommended Intake",
+                                            showInLegend: true,
+                                            dataPoints:[
+                                                {label: "Carbs", y: 300},
+                                                {label: "Fat", y: 65},
+                                                {label: "Protein", y: 50},
+                                                {label: "Sugar", y: 36},
+                                                {label: "Fiber", y: 25}
+
+
+
+                                            ]
+                                        },
+                                        {
+                                            type: "column",
+                                            name: "Your actual Intake",
+                                            legendText: "Your actual Intake",
+                                            axisYType: "secondary",
+                                            showInLegend: true,
+                                            dataPoints:[
+                                                {label: "Carbs", y: 135},
+                                                {label: "Fat", y: 114},
+                                                {label: "Protein", y: 49},
+                                                {label: "Sugar", y: 78},
+                                                {label: "Fiber", y: 31}
+
+
+                                            ]
+                                        }
+
+                                    ],
+                                    legend:{
+                                        cursor:"pointer",
+                                        itemclick: function(e){
+                                            if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                                                e.dataSeries.visible = false;
+                                            }
+                                            else {
+                                                e.dataSeries.visible = true;
+                                            }
+                                            chart.render();
+                                        }
+                                    }
+
+
+                                });
+
+
+
+                        chart.render();
+
+                    }
+                </script>
+
+{% endblock %}
